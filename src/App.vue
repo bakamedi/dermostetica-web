@@ -269,7 +269,7 @@ const anniversaryPackages = [
     downtime: 'Leve eritema 12-24h',
     image:
       'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=800&q=85',
-    alt: 'Tratamiento facial EXOPDRN Nanopore y Fotoage LED en Dermo Estética',
+    alt: 'Tratamiento facial EXOPDRN Nanopore y Fotoage LED en DermoStetica',
     waText: 'Hola DermoSTETICA, me interesa agendar el paquete de 11 Aniversario EXOPDRN ($405 por 3 sesiones).',
   },
   {
@@ -326,7 +326,7 @@ const anniversaryPackages = [
     downtime: 'No invasivo / Efecto glow',
     image:
       'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=85',
-    alt: 'Tratamiento de fototerapia Fotoage Skin Radiance en Dermo Estética',
+    alt: 'Tratamiento de fototerapia Fotoage Skin Radiance en DermoStetica',
     waText: 'Hola DermoSTETICA, deseo consultar sobre el paquete Fotoage Skin Radiance ($280 por 4 terapias).',
   },
   {
@@ -1207,10 +1207,10 @@ function closeMenu() {
       </div>
     </div>
 
-    <!-- Official Floating Glass Capsule Header with Official Dermo Estética Logo -->
+    <!-- Official Floating Glass Capsule Header with Official DermoStetica Logo -->
     <header class="site-header" :class="{ 'is-scrolled': isScrolled }">
-      <a class="brand-link" href="#inicio" aria-label="Dermo Estética, volver al inicio" @click="closeMenu">
-        <!-- Official Dermo Estética Circular Emblem -->
+      <a class="brand-link" href="#inicio" aria-label="DermoStetica, volver al inicio" @click="closeMenu">
+        <!-- Official DermoStetica Circular Emblem -->
         <div class="brand-emblem-official" aria-hidden="true">
           <svg viewBox="0 0 54 54" class="brand-emblem-svg" fill="none">
             <defs>
@@ -1877,7 +1877,7 @@ function closeMenu() {
             <div class="anniversary-header-left">
               <div class="eyebrow">
                 <span class="gold-line"></span>
-                <span>11.º ANIVERSARIO · DERMO ESTÉTICA SALINAS</span>
+                <span>11.º ANIVERSARIO · DERMOSTETICA SALINAS</span>
               </div>
               <h2>Celebramos 11 Años de Cuidado Médico<br />con <em>Tarifas y Regalos de Aniversario.</em></h2>
               <p>
@@ -1897,7 +1897,7 @@ function closeMenu() {
                   />
                   <text class="stamp-text">
                     <textPath href="#annivStampCircle" startOffset="0%">
-                      ✦ 11 ANIVERSARIO · DERMO ESTÉTICA ✦ SALINAS ✦
+                      ✦ 11 ANIVERSARIO · DERMOSTETICA ✦ SALINAS ✦
                     </textPath>
                   </text>
                 </svg>
@@ -3321,7 +3321,7 @@ function closeMenu() {
           </div>
           <div class="story-header-text">
             <div class="story-header-brand">
-              <strong>Dermo Estética</strong>
+              <strong>DermoStetica</strong>
               <span class="story-verified-badge" title="Cuenta oficial verificada">✓</span>
             </div>
             <small>{{ activeStory.tag }} · Salinas, Ecuador</small>
@@ -3353,7 +3353,7 @@ function closeMenu() {
                   </svg>
                 </div>
                 <div class="schedule-brand-names">
-                  <span class="schedule-brand-main">Dermo Estética</span>
+                  <span class="schedule-brand-main">DermoStetica</span>
                   <span class="schedule-brand-sub">MEDICINA ESTÉTICA Y LÁSER</span>
                 </div>
               </div>
