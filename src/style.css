@@ -459,9 +459,10 @@ section.section-wrap:not(:first-of-type) {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: nowrap;
   height: 64px;
-  width: min(1260px, calc(100% - 48px));
-  padding: 0 8px 0 14px;
+  width: min(1280px, calc(100% - 36px));
+  padding: 0 16px 0 18px;
   border-radius: 999px;
   background: rgba(30, 26, 22, 0.44);
   backdrop-filter: blur(24px) saturate(180%);
@@ -529,7 +530,7 @@ section.section-wrap:not(:first-of-type) {
   color: #FFFFFF;
   display: flex;
   align-items: baseline;
-  gap: 5px;
+  gap: 0;
 }
 
 .brand-dermo {
@@ -560,17 +561,17 @@ section.section-wrap:not(:first-of-type) {
 .main-nav {
   display: flex;
   align-items: center;
-  gap: clamp(10px, 1.4vw, 22px);
+  gap: clamp(7px, 1vw, 18px);
   margin-left: auto;
 }
 
 .nav-link-item {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  padding: 6px 0;
+  gap: 4px;
+  padding: 5px 0;
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.92);
   text-decoration: none;
@@ -684,23 +685,23 @@ section.section-wrap:not(:first-of-type) {
 .revoza-appointment-btn {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  padding: 5px 22px 5px 6px;
+  gap: 8px;
+  padding: 4px 15px 4px 5px;
   border-radius: 999px;
   background: #46543F;
   /* Deep organic olive from the screenshot */
   border: 1px solid rgba(255, 255, 255, 0.16);
   color: #FFFFFF;
   text-decoration: none;
-  margin-left: 8px;
+  margin-left: 6px;
   flex-shrink: 0;
   box-shadow: 0 4px 14px rgba(45, 55, 40, 0.25);
   transition: all 280ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .revoza-btn-circle {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background: #FFFFFF;
   color: #2D382A;
@@ -713,15 +714,15 @@ section.section-wrap:not(:first-of-type) {
 }
 
 .revoza-arrow-icon {
-  width: 15px;
-  height: 15px;
+  width: 13px;
+  height: 13px;
   stroke: #2D382A;
   transition: transform 280ms ease;
 }
 
 .revoza-btn-text {
   font-family: var(--font-sans);
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 600;
   color: #FFFFFF;
   letter-spacing: 0.01em;
@@ -736,6 +737,48 @@ section.section-wrap:not(:first-of-type) {
 
 .revoza-appointment-btn:hover .revoza-arrow-icon {
   transform: rotate(45deg);
+}
+
+.header-actions {
+  display: none;
+}
+
+.drawer-appointment-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 11px 24px;
+  border-radius: 999px;
+  background: #46543F;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(45, 55, 40, 0.35);
+  transition: all 260ms ease;
+  width: 100%;
+}
+
+.drawer-appointment-btn:hover {
+  background: #52634A;
+  transform: translateY(-1px);
+}
+
+.drawer-appointment-btn .revoza-btn-circle {
+  width: 32px;
+  height: 32px;
+}
+
+.revoza-mobile-btn {
+  display: none;
+}
+
+.revoza-desktop-btn {
+  display: inline-flex;
 }
 
 .menu-toggle {
@@ -4857,45 +4900,112 @@ section.section-wrap:not(:first-of-type) {
   }
 }
 
-@media (max-width: 860px) {
-  .announcement {
-    flex-direction: column;
-    gap: 4px;
-    padding: 8px 5%;
-    font-size: 9px;
+/* Responsive Desktop Optimization (1081px - 1320px) */
+@media (min-width: 1081px) and (max-width: 1320px) {
+  .site-header {
+    width: min(97%, calc(100% - 24px));
+    padding: 0 14px 0 16px;
+    height: 60px;
+    top: 16px;
   }
 
+  .brand-link {
+    gap: 9px;
+  }
+
+  .brand-emblem-official {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand-title-official {
+    font-size: 18px;
+  }
+
+  .brand-tagline-official {
+    font-size: 6.5px;
+    letter-spacing: 0.16em;
+  }
+
+  .main-nav {
+    gap: clamp(5px, 0.75vw, 11px);
+  }
+
+  .nav-link-item {
+    font-size: 12.5px;
+    gap: 3px;
+    padding: 4px 0;
+  }
+
+  .nav-chevron-svg {
+    width: 8px;
+    height: 8px;
+  }
+
+  .nav-anniversary-badge {
+    padding: 3px 8px 3px 5px;
+    gap: 5px;
+  }
+
+  .nav-anniv-label {
+    font-size: 11.5px;
+  }
+
+  .nav-anniv-num-badge {
+    padding: 1px 5px;
+    font-size: 10px;
+  }
+
+  .revoza-appointment-btn {
+    padding: 3px 12px 3px 4px;
+    gap: 6px;
+    margin-left: 4px;
+  }
+
+  .revoza-btn-circle {
+    width: 28px;
+    height: 28px;
+  }
+
+  .revoza-arrow-icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .revoza-btn-text {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1080px) {
   .site-header {
-    height: 58px;
-    width: min(94%, 540px);
-    top: 10px;
+    height: 60px;
+    width: min(94%, 960px);
+    top: 12px;
     left: 0;
     right: 0;
     margin: 0 auto;
-    padding: 0 16px;
+    padding: 0 10px 0 16px;
     border-radius: 999px;
-    background: rgba(30, 26, 22, 0.48);
+    background: rgba(30, 26, 22, 0.52);
     backdrop-filter: blur(24px) saturate(180%);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25), inset 0 1px 1px 0 rgba(255, 255, 255, 0.25);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28), inset 0 1px 1px 0 rgba(255, 255, 255, 0.25);
   }
 
   .site-header.is-scrolled {
     height: 54px;
     top: 8px;
-    background: rgba(26, 22, 18, 0.54);
-    backdrop-filter: blur(28px) saturate(190%);
-    -webkit-backdrop-filter: blur(28px) saturate(190%);
-    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(26, 22, 18, 0.58);
   }
 
-  .brand-title {
-    font-size: 17px;
-  }
-
-  .brand-subtitle {
-    display: none;
+  .header-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    flex-shrink: 0;
   }
 
   .menu-toggle {
@@ -4907,11 +5017,18 @@ section.section-wrap:not(:first-of-type) {
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    border: 1px solid rgba(197, 160, 89, 0.4);
+    border: 1px solid rgba(250, 158, 0, 0.45);
     background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: var(--ios-blur-subtle);
-    -webkit-backdrop-filter: var(--ios-blur-subtle);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     cursor: pointer;
+    flex-shrink: 0;
+    transition: all 250ms ease;
+  }
+
+  .menu-toggle:hover {
+    background: rgba(250, 158, 0, 0.16);
+    border-color: #FA9E00;
   }
 
   .menu-toggle span {
@@ -4922,6 +5039,31 @@ section.section-wrap:not(:first-of-type) {
     transition: all 250ms ease;
   }
 
+  .revoza-desktop-btn {
+    display: none !important;
+  }
+
+  .revoza-mobile-btn {
+    display: inline-flex !important;
+    margin: 0 !important;
+    padding: 4px 15px 4px 5px !important;
+    gap: 8px !important;
+  }
+
+  .revoza-mobile-btn .revoza-btn-circle {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .revoza-mobile-btn .revoza-arrow-icon {
+    width: 13px !important;
+    height: 13px !important;
+  }
+
+  .revoza-mobile-btn .revoza-btn-text {
+    font-size: 13px !important;
+  }
+
   .main-nav {
     position: fixed;
     top: 76px;
@@ -4930,12 +5072,12 @@ section.section-wrap:not(:first-of-type) {
     display: none;
     flex-direction: column;
     align-items: stretch;
-    background: rgba(21, 20, 19, 0.95);
+    background: rgba(21, 20, 19, 0.96);
     backdrop-filter: blur(32px) saturate(200%);
     -webkit-backdrop-filter: blur(32px) saturate(200%);
     padding: 24px 20px 28px;
     border-radius: 28px;
-    border: 1px solid rgba(197, 160, 89, 0.35);
+    border: 1px solid rgba(250, 158, 0, 0.35);
     box-shadow: 0 24px 50px rgba(0, 0, 0, 0.6);
     gap: 0;
     max-height: calc(100vh - 100px);
@@ -4966,12 +5108,29 @@ section.section-wrap:not(:first-of-type) {
     border-radius: 16px;
   }
 
-  .revoza-appointment-btn {
-    margin-top: 18px;
-    margin-left: 0;
-    justify-content: center;
-    width: 100%;
-    padding: 8px 24px 8px 8px;
+  .drawer-appointment-btn {
+    display: inline-flex !important;
+  }
+}
+
+@media (max-width: 860px) {
+  .announcement {
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 5%;
+    font-size: 9px;
+  }
+
+  .site-header {
+    width: min(94%, 580px);
+  }
+
+  .brand-title {
+    font-size: 17px;
+  }
+
+  .brand-subtitle {
+    display: none;
   }
 
   .stories-header {
@@ -4997,6 +5156,70 @@ section.section-wrap:not(:first-of-type) {
 
   .result-stats-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    height: 56px;
+    width: min(94%, 560px);
+    top: 10px;
+    padding: 0 8px 0 12px;
+  }
+
+  .site-header.is-scrolled {
+    height: 52px;
+    top: 6px;
+  }
+
+  .brand-link {
+    gap: 9px;
+  }
+
+  .brand-emblem-official {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-title-official {
+    font-size: 17px;
+  }
+
+  .brand-tagline-official {
+    font-size: 6px;
+    letter-spacing: 0.12em;
+  }
+
+  .header-actions {
+    gap: 7px;
+  }
+
+  .revoza-mobile-btn {
+    padding: 3px 12px 3px 4px !important;
+    gap: 6px !important;
+  }
+
+  .revoza-mobile-btn .revoza-btn-circle {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .revoza-mobile-btn .revoza-arrow-icon {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  .revoza-mobile-btn .revoza-btn-text {
+    font-size: 12px !important;
+  }
+
+  .menu-toggle {
+    width: 34px;
+    height: 34px;
+  }
+
+  .menu-toggle span {
+    width: 16px;
   }
 }
 
@@ -5037,6 +5260,79 @@ section.section-wrap:not(:first-of-type) {
 
   .floating-whatsapp-inner {
     padding: 14px;
+  }
+}
+
+@media (max-width: 440px) {
+  .site-header {
+    height: 52px;
+    width: calc(100% - 20px);
+    top: 8px;
+    padding: 0 6px 0 10px;
+  }
+
+  .brand-link {
+    gap: 7px;
+  }
+
+  .brand-emblem-official {
+    width: 32px;
+    height: 32px;
+  }
+
+  .brand-title-official {
+    font-size: 15px;
+  }
+
+  .brand-tagline-official {
+    font-size: 5px;
+    letter-spacing: 0.08em;
+  }
+
+  .header-actions {
+    gap: 5px;
+  }
+
+  .revoza-mobile-btn {
+    padding: 2.5px 9px 2.5px 3px !important;
+    gap: 5px !important;
+  }
+
+  .revoza-mobile-btn .revoza-btn-circle {
+    width: 26px !important;
+    height: 26px !important;
+  }
+
+  .revoza-mobile-btn .revoza-arrow-icon {
+    width: 11px !important;
+    height: 11px !important;
+  }
+
+  .revoza-mobile-btn .revoza-btn-text {
+    font-size: 11px !important;
+  }
+
+  .menu-toggle {
+    width: 32px;
+    height: 32px;
+  }
+
+  .menu-toggle span {
+    width: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand-tagline-official {
+    display: none;
+  }
+
+  .revoza-mobile-btn {
+    padding: 3px !important;
+  }
+
+  .revoza-mobile-btn .revoza-btn-text {
+    display: none !important;
   }
 }
 

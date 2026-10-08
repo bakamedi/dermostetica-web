@@ -1249,26 +1249,13 @@ function closeMenu() {
         </div>
         <div class="brand-text-official">
           <div class="brand-title-official">
-            <span class="brand-dermo">Dermo</span>
-            <span class="brand-estetica">Estética</span>
+            <span class="brand-dermo">Dermo</span><span class="brand-estetica">Stetica</span>
           </div>
           <span class="brand-tagline-official">MEDICINA ESTÉTICA Y LÁSER</span>
         </div>
       </a>
 
-      <!-- Mobile Navigation Hamburger Toggle -->
-      <button
-        class="menu-toggle"
-        type="button"
-        :aria-expanded="menuOpen"
-        aria-label="Abrir menú de navegación"
-        @click="menuOpen = !menuOpen"
-      >
-        <span></span>
-        <span></span>
-      </button>
-
-      <!-- Center Nav Links + Right Pill CTA Button (matching Image) -->
+      <!-- Center Nav Links (Desktop) / Dropdown Drawer (Mobile/Tablet) -->
       <nav class="main-nav" :class="{ 'is-open': menuOpen }" aria-label="Navegación principal">
         <a href="#inicio" @click="closeMenu" class="nav-link-item">
           <span>Inicio</span>
@@ -1278,7 +1265,7 @@ function closeMenu() {
         </a>
         <a href="#filosofia" @click="closeMenu" class="nav-link-item">Nosotros</a>
         <!-- Celebratory 11th Anniversary Capsule Badge -->
-        <a href="#aniversario" @click="closeMenu" class="nav-anniversary-badge" aria-label="Especial 11 Aniversario DermoSTETICA">
+        <a href="#aniversario" @click="closeMenu" class="nav-anniversary-badge" aria-label="Especial 11 Aniversario DermoStetica">
           <span class="nav-anniv-num-badge">11</span>
           <span class="nav-anniv-label">Aniversario</span>
           <span class="nav-anniv-sparkle" aria-hidden="true">✦</span>
@@ -1295,16 +1282,49 @@ function closeMenu() {
         <a href="#galeria" @click="closeMenu" class="nav-link-item">Galería</a>
         <a href="#clinica" @click="closeMenu" class="nav-link-item">Horarios</a>
 
-        <!-- Revoza Deep Olive "Book Appointment" Pill CTA Button with White Circle Arrow -->
-        <a class="revoza-appointment-btn" :href="defaultWhatsAppUrl" target="_blank" rel="noreferrer" @click="closeMenu">
+        <!-- Revoza Deep Olive "Book Appointment" Pill CTA Button for Desktop -->
+        <a class="revoza-appointment-btn revoza-desktop-btn" :href="defaultWhatsAppUrl" target="_blank" rel="noreferrer" @click="closeMenu">
           <span class="revoza-btn-circle" aria-hidden="true">
             <svg viewBox="0 0 16 16" class="revoza-arrow-icon" fill="none" stroke="currentColor">
               <path d="M4.5 11.5L11.5 4.5M11.5 4.5H6.5M11.5 4.5V9.5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>
-          <span class="revoza-btn-text">Agendar Cita</span>
+          <span class="revoza-btn-text">Agendar</span>
+        </a>
+
+        <!-- Drawer CTA Button inside open menu for Tablet/Mobile -->
+        <a class="drawer-appointment-btn" :href="defaultWhatsAppUrl" target="_blank" rel="noreferrer" @click="closeMenu">
+          <span class="revoza-btn-circle" aria-hidden="true">
+            <svg viewBox="0 0 16 16" class="revoza-arrow-icon" fill="none" stroke="currentColor">
+              <path d="M4.5 11.5L11.5 4.5M11.5 4.5H6.5M11.5 4.5V9.5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>Agendar en Salinas</span>
         </a>
       </nav>
+
+      <!-- Responsive Header Actions (Agendar button + Hamburger menu toggle) -->
+      <div class="header-actions">
+        <a class="revoza-appointment-btn revoza-mobile-btn" :href="defaultWhatsAppUrl" target="_blank" rel="noreferrer" @click="closeMenu">
+          <span class="revoza-btn-circle" aria-hidden="true">
+            <svg viewBox="0 0 16 16" class="revoza-arrow-icon" fill="none" stroke="currentColor">
+              <path d="M4.5 11.5L11.5 4.5M11.5 4.5H6.5M11.5 4.5V9.5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="revoza-btn-text">Agendar</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          :aria-expanded="menuOpen"
+          aria-label="Abrir menú de navegación"
+          @click="menuOpen = !menuOpen"
+        >
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </header>
 
     <main>
@@ -3207,8 +3227,7 @@ function closeMenu() {
             </div>
             <div class="brand-text-official">
               <div class="brand-title-official">
-                <span class="brand-dermo">Dermo</span>
-                <span class="brand-estetica">Estética</span>
+                <span class="brand-dermo">Dermo</span><span class="brand-estetica">Stetica</span>
               </div>
               <span class="brand-tagline-official">MEDICINA ESTÉTICA Y LÁSER</span>
             </div>
