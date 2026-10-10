@@ -61,21 +61,30 @@ function stopHeroSlider() {
 
 let touchStartX = 0
 let touchEndX = 0
+let touchStartY = 0
+let touchEndY = 0
 
 function handleSliderTouchStart(e: TouchEvent) {
   if (e.changedTouches && e.changedTouches[0]) {
-    touchStartX = e.changedTouches[0].screenX
+    touchStartX = e.changedTouches[0].clientX
+    touchStartY = e.changedTouches[0].clientY
   }
 }
 
 function handleSliderTouchEnd(e: TouchEvent) {
   if (e.changedTouches && e.changedTouches[0]) {
-    touchEndX = e.changedTouches[0].screenX
+    touchEndX = e.changedTouches[0].clientX
+    touchEndY = e.changedTouches[0].clientY
   }
-  if (touchStartX - touchEndX > 50) {
-    nextHeroSlide(true)
-  } else if (touchEndX - touchStartX > 50) {
-    prevHeroSlide(true)
+  const deltaX = touchStartX - touchEndX
+  const deltaY = touchStartY - touchEndY
+  // Only trigger horizontal slide navigation if horizontal swipe exceeds vertical movement
+  if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 40) {
+    if (deltaX > 0) {
+      nextHeroSlide(true)
+    } else {
+      prevHeroSlide(true)
+    }
   }
 }
 
@@ -1333,8 +1342,8 @@ function closeMenu() {
         id="inicio"
         class="chea-fullscreen-hero-slider"
         aria-label="Experiencia de bienvenida DermoSTETICA"
-        @touchstart="handleSliderTouchStart"
-        @touchend="handleSliderTouchEnd"
+        @touchstart.passive="handleSliderTouchStart"
+        @touchend.passive="handleSliderTouchEnd"
       >
         <!-- Background Slide Track with Ken Burns effect -->
         <div class="chea-slider-track">

@@ -58,6 +58,8 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 96px;
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -71,6 +73,8 @@ body {
   line-height: 1.6;
   position: relative;
   overflow-x: hidden;
+  overflow-x: clip;
+  -webkit-overflow-scrolling: touch;
 }
 
 a {
@@ -95,7 +99,9 @@ img {
   position: relative;
   max-width: 1920px;
   margin: 0 auto;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
   background:
     radial-gradient(circle at 18% 12%, rgba(245, 236, 217, 0.45) 0%, transparent 45%),
     radial-gradient(circle at 82% 68%, rgba(223, 193, 131, 0.18) 0%, transparent 55%),
@@ -107,12 +113,6 @@ img {
   margin: 0 auto;
   position: relative;
   z-index: 2;
-}
-
-/* Rendering performance: Skip layout and paint for offscreen sections */
-section.section-wrap:not(:first-of-type) {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 750px;
 }
 
 /* ==========================================================================
@@ -982,6 +982,7 @@ section.section-wrap:not(:first-of-type) {
   display: flex;
   align-items: center;
   justify-content: center;
+  touch-action: pan-y;
 }
 
 /* Background Slide Track */
@@ -1645,16 +1646,16 @@ section.section-wrap:not(:first-of-type) {
     min-height: 100svh;
     padding: 0;
     overflow: hidden;
+    touch-action: pan-y;
   }
 
   .chea-slide {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    overflow-y: auto;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
+    justify-content: center;
+    overflow: visible;
+    touch-action: pan-y;
     padding-top: calc(58px + 18px);
     /* Clear the fixed header completely */
     padding-bottom: 68px;
